@@ -43,18 +43,18 @@ function Form() {
           onChange={(e) => setQuantity(Number(e.target.
           value))}
       >
-        {Array.from({ length:22 }, (_, i) => i + 1).
-        map((num) => (
-          <option value={num} key={num}>
-              {num}
-          </option>
-        ))}
+          {Array.from({ length:22 }, (_, i) => i + 1).
+          map((num) => (
+            <option value={num} key={num}>
+                {num}
+            </option>
+          ))}
       </select>
       <input 
-      type="text" 
-      placeholder="Item..." 
-      value={description} 
-      onChange={(e)=> setDescription(e.target.value)}
+          type="text" 
+          placeholder="Item..." 
+          value={description} 
+          onChange={(e)=> setDescription(e.target.value)}
       />
       <button>Add</button>
     </form>
