@@ -33,7 +33,12 @@ function Form() {
 
     if (!description) return;
 
-    const newItem = { description, quantity, packed: true, id: Date.now() };
+    const newItem = { 
+      description, 
+      quantity, 
+      packed: true, 
+      id: Date.now() 
+    };
     console.log(newItem);
 
     handleAddItems(newItem)
