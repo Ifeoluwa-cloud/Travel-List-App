@@ -15,8 +15,8 @@ export default function App() {
 
   return <div className="App">
       <Logo />
-      <Form onAddItems={handleAddItems}/>
-      <PackingList items={items}/>
+      <Form onAddItems={handleAddItems} />
+      <PackingList items={items} />
       <Stats />
   </div>
 }
