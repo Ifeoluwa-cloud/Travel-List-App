@@ -97,9 +97,13 @@ function PackingList({ items, onDeleteItems, onToggleItems }) {
 
   if (sortBy === "description") 
     sortedItems = items
-      .slice().
-      sort((a,b) => description.localeCompare(b.
-      description));
+      .slice()
+      .sort((a,b) => a.description.localeCompare(b.
+        description));
+
+  if (sortBy === "packed") 
+    sortedItems = items
+      .slice().sort((a,b) => Number(a.packed) - Number(b.packed));
 
   return (
     <div className="list">
@@ -113,14 +117,14 @@ function PackingList({ items, onDeleteItems, onToggleItems }) {
           </ul>
 
           <div className="actions">
-            <select value="sortBy" onChange={(e) => setSortBy(e.target.value)} id="">
-              <option value="input">Sort by input order
-              </option>
-              <option value="description">Sort by description
-              </option>
-              <option value="packed">Sort by packed status
-              </option>
-            </select>
+              <select value="sortBy" onChange={(e) => setSortBy(e.target.value)} id="">
+                  <option value="input">Sort by input order
+                  </option>
+                  <option value="description">Sort by description
+                  </option>
+                  <option value="packed">Sort by packed status
+                  </option>
+              </select>
           </div>
     </div>
   );
@@ -149,10 +153,10 @@ function Stats({ items }) {
 
   return <footer className="stats">
     <em>
-    {percentage === 100 ? 'You got everything! Ready to go ✈️' : 
-        `💼 You have ${numItems} items on your list, and you 
-        already packed ${numPacked} (${percentage}%)`
-    }
+        {percentage === 100 ? 'You got everything! Ready to go ✈️' : 
+            `💼 You have ${numItems} items on your list, and you 
+            already packed ${numPacked} (${percentage}%)`
+        }
     </em>
   </footer>
 }
