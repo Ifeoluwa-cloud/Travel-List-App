@@ -49,7 +49,8 @@ export default function PackingList({ items, onDeleteItems, onToggleItems, onCle
             <span style={item.packed ? {textDecoration:"line-through"}: {}}>      
               {item.quantity} {item.description}
             </span> 
-            <button onClick={() => onDeleteItems(item.id)}>❌</button>
+            <button 
+            onClick={() => onDeleteItems(item.id)}>❌</button>
       </li>
     );
   } 
